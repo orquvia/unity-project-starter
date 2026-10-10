@@ -1,0 +1,17 @@
+{
+    "name": "Qrquvia.Starter.Infrastructure",
+    "rootNamespace": "Qrquvia.Starter.Infrastructure",
+    "references": [
+        "GUID:889d54aa757b5f64482b1924c1f5f26e",
+        "GUID:d1188c890990e9840b4efb47475a49de"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

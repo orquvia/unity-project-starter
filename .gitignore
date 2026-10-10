@@ -1,0 +1,82 @@
+# ============================================================
+# Unity
+# Unity プロジェクトは UnityProject/ 配下にあるため、パスはそこを基準にしている
+# ============================================================
+
+# Unity が自動生成するフォルダ
+/UnityProject/[Ll]ibrary/
+/UnityProject/[Tt]emp/
+/UnityProject/[Oo]bj/
+/UnityProject/[Bb]uild/
+/UnityProject/[Bb]uilds/
+/UnityProject/[Ll]ogs/
+/UnityProject/[Uu]ser[Ss]ettings/
+/UnityProject/[Mm]emoryCaptures/
+/UnityProject/[Rr]ecordings/
+
+# Asset Store ツールのプラグイン
+/UnityProject/[Aa]ssets/AssetStoreTools*
+
+# Visual Studio のキャッシュ
+.vs/
+
+# Gradle キャッシュ
+.gradle/
+
+# IDE が自動生成するファイル
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# デバッグシンボル
+*.pdb.meta
+*.mdb.meta
+
+# Crashlytics
+crashlytics-build.properties
+
+# パッケージ/ビルド成果物
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Gradle 自動生成のアセット
+/UnityProject/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/UnityProject/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Addressables のビルドキャッシュ
+/UnityProject/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Burst のデバッグ情報
+/UnityProject/[Aa]ssets/[Ss]treamingAssets/BurstDebugInformation_DoNotShip*
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
