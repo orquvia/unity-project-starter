@@ -64,6 +64,7 @@ namespace Orquvia.Starter.Tests.Bootstrap
         [TestCase(typeof(IGameLogger))]
         [TestCase(typeof(ISceneNavigator))]
         [TestCase(typeof(GameFlow))]
+        [TestCase(typeof(ITimeProvider))]
         public void Registration_ResolvesAsSingleton(Type type)
         {
             var first = Container.Resolve(type);
@@ -78,6 +79,7 @@ namespace Orquvia.Starter.Tests.Bootstrap
         {
             Assert.That(Container.Resolve<IGameLogger>(), Is.InstanceOf<UnityGameLogger>());
             Assert.That(Container.Resolve<ISceneNavigator>(), Is.InstanceOf<UnitySceneNavigator>());
+            Assert.That(Container.Resolve<ITimeProvider>(), Is.InstanceOf<UnityTimeProvider>());
         }
 
         [Test]
