@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using VContainer.Unity;
 using Orquvia.Starter.Domain;
 using Orquvia.Starter.UseCase;
@@ -15,6 +14,7 @@ namespace Orquvia.Starter.Presentation
         private readonly AdvanceGameUseCase _advanceGame;
         private readonly StartGameUseCase _startGame;
         private readonly GameFlow _flow;
+        private readonly ITimeProvider _time;
 
         private bool resultRequested;
 
@@ -24,7 +24,8 @@ namespace Orquvia.Starter.Presentation
             HitTargetUseCase hitTarget,
             AdvanceGameUseCase advanceGame,
             StartGameUseCase startGame,
-            GameFlow flow)
+            GameFlow flow,
+            ITimeProvider time)
         {
             _view = view;
             _session = session;
@@ -32,6 +33,7 @@ namespace Orquvia.Starter.Presentation
             _advanceGame = advanceGame;
             _startGame = startGame;
             _flow = flow;
+            _time = time;
         }
 
         public void Start()
@@ -48,7 +50,7 @@ namespace Orquvia.Starter.Presentation
                 return;
             }
 
-            var finished = _advanceGame.Execute(Time.deltaTime);
+            var finished = _advanceGame.Execute(_time.DeltaTime);
             Refresh();
 
             if (finished)

@@ -26,6 +26,7 @@ namespace Orquvia.Starter.Bootstrap
             builder.Register<ISceneNavigator, UnitySceneNavigator>(Lifetime.Singleton);
 
             builder.Register<GameFlow>(Lifetime.Singleton);
+            builder.Register<ITimeProvider, UnityTimeProvider>(Lifetime.Singleton);
         }
     }
 }
