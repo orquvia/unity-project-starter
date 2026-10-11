@@ -43,7 +43,7 @@ namespace Orquvia.Starter.Domain
 
         public bool Advance(float deltaSeconds)
         {
-            if (deltaSeconds < 0f)
+            if (!float.IsFinite(deltaSeconds) || deltaSeconds < 0f)
             {
                 throw new ArgumentOutOfRangeException(nameof(deltaSeconds));
             }
