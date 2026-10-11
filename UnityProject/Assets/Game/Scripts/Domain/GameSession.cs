@@ -17,20 +17,20 @@ namespace Orquvia.Starter.Domain
             Reset();
         }
 
-        public void Reset()
+        internal void Reset()
         {
             Score = 0;
             RemainingSeconds = _rules.DurationSeconds;
             Status = GameStatus.Ready;
         }
 
-        public void Start()
+        internal void Start()
         {
             Reset();
             Status = GameStatus.Running;
         }
 
-        public bool TryHitTarget()
+        internal bool TryHitTarget()
         {
             if (Status != GameStatus.Running)
             {
@@ -41,7 +41,7 @@ namespace Orquvia.Starter.Domain
             return true;
         }
 
-        public bool Advance(float deltaSeconds)
+        internal bool Advance(float deltaSeconds)
         {
             if (!float.IsFinite(deltaSeconds) || deltaSeconds < 0f)
             {
