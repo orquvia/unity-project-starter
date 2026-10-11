@@ -1,0 +1,19 @@
+{
+    "name": "Qrquvia.Starter.Bootstrap",
+    "rootNamespace": "Qrquvia.Starter.Bootstrap",
+    "references": [
+        "GUID:889d54aa757b5f64482b1924c1f5f26e",
+        "GUID:d1188c890990e9840b4efb47475a49de",
+        "GUID:903298b44ff072f4fb96077f3410f9cc",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
