@@ -13,13 +13,7 @@ namespace Orquvia.Starter.Infrastructure
             SceneId sceneId,
             CancellationToken ct)
         {
-            string path = sceneId switch
-            {
-                SceneId.Title => "Game/Scene/Title",
-                SceneId.Game => "Game/Scene/Game",
-                SceneId.Result => "Game/Scene/Result",
-                _ => throw new ArgumentOutOfRangeException(nameof(sceneId))
-            };
+            string path = ToScenePath(sceneId);
 
             var operation = SceneManager.LoadSceneAsync(path, LoadSceneMode.Single);
 
@@ -29,6 +23,18 @@ namespace Orquvia.Starter.Infrastructure
             }
 
             await operation.WithCancellation(ct);
+        }
+
+        // Build Settings に表示されるパス（"Assets/" と拡張子を除いたもの）
+        internal static string ToScenePath(SceneId sceneId)
+        {
+            return sceneId switch
+            {
+                SceneId.Title => "Game/Scene/Title",
+                SceneId.Game => "Game/Scene/Game",
+                SceneId.Result => "Game/Scene/Result",
+                _ => throw new ArgumentOutOfRangeException(nameof(sceneId))
+            };
         }
     }
 }
