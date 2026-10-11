@@ -13,6 +13,7 @@ namespace Orquvia.Starter.Presentation
         private readonly CancellationTokenSource _cts = new();
 
         private bool transitioning;
+        private bool disposed;
 
         public GameFlow(
             ISceneNavigator scenes,
@@ -28,7 +29,8 @@ namespace Orquvia.Starter.Presentation
 
         private async UniTask NavigateAsync(SceneId destination)
         {
-            if (transitioning)
+            // 破棄後のリクエストはアプリ終了時に起こりうる正常な競合なので、何もせず無視する。
+            if (disposed || transitioning)
             {
                 return;
             }
@@ -58,6 +60,12 @@ namespace Orquvia.Starter.Presentation
 
         public void Dispose()
         {
+            if (disposed)
+            {
+                return;
+            }
+
+            disposed = true;
             _cts.Cancel();
             _cts.Dispose();
         }

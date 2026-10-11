@@ -9,7 +9,7 @@ namespace Orquvia.Starter.Domain
 
         public GameRules(float durationSeconds, int pointsPerHit)
         {
-            if (durationSeconds <= 0f)
+            if (!float.IsFinite(durationSeconds) || durationSeconds <= 0f)
             {
                 throw new ArgumentOutOfRangeException(nameof(durationSeconds));
             }

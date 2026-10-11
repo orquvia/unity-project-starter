@@ -1,0 +1,29 @@
+{
+    "name": "Orquvia.Starter.Tests.EditMode",
+    "rootNamespace": "Orquvia.Starter.Tests",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:889d54aa757b5f64482b1924c1f5f26e",
+        "GUID:d1188c890990e9840b4efb47475a49de",
+        "GUID:903298b44ff072f4fb96077f3410f9cc",
+        "GUID:1b91c49c6ed10ad468d006d61c0c174b",
+        "GUID:62601a8ab0e2c6f488ee23362d7c0b63",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
