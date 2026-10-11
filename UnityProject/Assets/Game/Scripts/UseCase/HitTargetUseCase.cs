@@ -4,7 +4,7 @@ namespace Orquvia.Starter.UseCase
 {
     public sealed class HitTargetUseCase
     {
-        public readonly GameSession _session;
+        private readonly GameSession _session;
 
         public HitTargetUseCase(GameSession session)
         {

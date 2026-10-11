@@ -2,13 +2,6 @@ using System;
 
 namespace Orquvia.Starter.Domain
 {
-    public enum GameStatus
-    {
-        Ready,
-        Running,
-        Finished
-    }
-
     public sealed class GameRules
     {
         public float DurationSeconds { get; }

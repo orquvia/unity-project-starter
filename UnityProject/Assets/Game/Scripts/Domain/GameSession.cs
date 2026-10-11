@@ -1,9 +1,9 @@
-
 using System;
 
 namespace Orquvia.Starter.Domain
 {
     public sealed class GameSession
+        : IReadOnlyGameSession
     {
         private readonly GameRules _rules;
 
