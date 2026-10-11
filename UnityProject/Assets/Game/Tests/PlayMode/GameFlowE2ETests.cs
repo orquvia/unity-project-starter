@@ -15,8 +15,8 @@ namespace Orquvia.Starter.Tests.PlayMode
     // 実際のシーン・DI・設定アセットを使い、Title → Game → Result → Title を通しで確認する。
     public sealed class GameFlowE2ETests
     {
-        // 各待機の上限（実時間）
-        private const float TimeoutSeconds = 10f;
+        // 各待機の上限（実時間）。CI の初回はシーン読み込みやシェーダーのコンパイルが遅いため余裕を持たせている
+        private const float TimeoutSeconds = 30f;
 
         // 制限時間（既定 20 秒）を短縮するための時間倍率
         private const float GameTimeScale = 20f;
