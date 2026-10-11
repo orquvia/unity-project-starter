@@ -3,9 +3,9 @@ using VContainer;
 using VContainer.Unity;
 using Orquvia.Starter.Presentation;
 
-namespace Qrquvia.Starter.Bootstrap
+namespace Orquvia.Starter.Bootstrap
 {
-    public class GameLifetimeScope : LifetimeScope
+    public sealed class GameLifetimeScope : LifetimeScope
     {
         [SerializeField] private GameView view;
 

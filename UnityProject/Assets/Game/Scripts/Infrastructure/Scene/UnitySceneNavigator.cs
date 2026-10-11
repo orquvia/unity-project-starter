@@ -1,25 +1,14 @@
 using System;
 using System.Threading;
-using UnityEngine;
 using Orquvia.Starter.UseCase;
-using Orquvia.Starter.Bootstrap;
 using System.Threading.Tasks;
-using VContainer;
-using VContainer.Unity;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 
-namespace Qrquvia.Starter.Infrastructure
+namespace Orquvia.Starter.Infrastructure
 {
     public sealed class UnitySceneNavigator : ISceneNavigator
     {
-        private readonly AppLifetimeScope _rootScope;
-
-        public UnitySceneNavigator(AppLifetimeScope rootScope)
-        {
-            _rootScope = rootScope;
-        }
-
         public async Task LoadAsync(
             SceneId sceneId,
             CancellationToken ct)
@@ -32,17 +21,14 @@ namespace Qrquvia.Starter.Infrastructure
                 _ => throw new ArgumentOutOfRangeException(nameof(sceneId))
             };
 
-            using (LifetimeScope.EnqueueParent(_rootScope))
+            var operation = SceneManager.LoadSceneAsync(path, LoadSceneMode.Single);
+
+            if (operation == null)
             {
-                var operation = SceneManager.LoadSceneAsync(path, LoadSceneMode.Single);
-
-                if (operation == null)
-                {
-                    throw new InvalidOperationException($"Failed to load scene: {path}");
-                }
-
-                await operation.WithCancellation(ct);
+                throw new InvalidOperationException($"Failed to load scene: {path}");
             }
+
+            await operation.WithCancellation(ct);
         }
     }
 }

@@ -1,13 +1,12 @@
 using System;
 using Orquvia.Starter.UseCase;
-using PlasticPipe.PlasticProtocol.Client.Proxies;
 using UnityEngine;
 
-namespace Qrquvia.Starter.Infrastructure
+namespace Orquvia.Starter.Infrastructure
 {
     public sealed class UnityGameLogger : IGameLogger
     {
-        public void Info(string message) => UnityEngine.Debug.Log(message);
+        public void Info(string message) => Debug.Log(message);
         public void Warning(string message) => Debug.LogWarning(message);
         public void Error(string message, Exception ex)
         {

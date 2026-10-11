@@ -10,29 +10,33 @@ namespace Orquvia.Starter.Presentation
         : IStartable, ITickable, IDisposable
     {
         private readonly GameView _view;
-        private readonly GameSession _session;
+        private readonly IReadOnlyGameSession _session;
         private readonly HitTargetUseCase _hitTarget;
         private readonly AdvanceGameUseCase _advanceGame;
+        private readonly StartGameUseCase _startGame;
         private readonly GameFlow _flow;
 
         private bool resultRequested;
 
         public GamePresenter(
             GameView view,
-            GameSession session,
+            IReadOnlyGameSession session,
             HitTargetUseCase hitTarget,
             AdvanceGameUseCase advanceGame,
+            StartGameUseCase startGame,
             GameFlow flow)
         {
             _view = view;
             _session = session;
             _hitTarget = hitTarget;
             _advanceGame = advanceGame;
+            _startGame = startGame;
             _flow = flow;
         }
 
         public void Start()
         {
+            _startGame.Execute();
             _view.TargetButton.onClick.AddListener(OnHit);
             Refresh();
         }
